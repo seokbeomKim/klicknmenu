@@ -55,11 +55,12 @@ extern int
 openDisplay(DpyContent* display)
 {
 	if ( (display->dpy = XOpenDisplay(NULL) ) == NULL ) {
-		return 1;
+                perror("Failed to opendisplay");
+                exit(12);
 	}
 	else {
-		display->screen = DefaultScreen(display->dpy);
-		display->depth  = DefaultDepth (display->dpy, display->screen);
+		display->screen = XDefaultScreen(display->dpy);
+		display->depth  = XDefaultDepth (display->dpy, display->screen);
 
 		return 0;
 	}
@@ -158,6 +159,10 @@ drawEntry(ENTRY* entry, DpyContent* display, ENTRY* current)
 	/* get the font information by querying font name */
 	display->fontinfo = XLoadQueryFont(display->dpy, fontname);
 	display->gc   = XCreateGC( display->dpy, display->win, GCForeground | GCBackground, &values );
+        if( display->fontinfo == NULL ) {
+                perror("Failed to load font specified in config file.");
+                exit(11);
+        }
         XSetFont (display->dpy, display->gc, display->fontinfo->fid);
 
         if( !display->fontinfo ) {
