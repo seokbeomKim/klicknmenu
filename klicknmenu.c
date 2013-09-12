@@ -331,8 +331,11 @@ extern void
 tolowerString(char* str)
 {
 	int index = 0;
+	int doublequote = 0;
 
 	for( ; index < strlen(str); index++ ) {
+		if( doublequote >= 2 ) break;
+		else if( str[index] == '\"' || str[index] == '\'' ) doublequote++;
 		str[index] = tolower(str[index]);
 	}
 }
