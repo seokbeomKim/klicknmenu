@@ -1,0 +1,37 @@
+menu_width 100
+menu_height 200
+border_width 1
+;border_color "grey"
+background "#000000"
+foreground "#ffffff"
+text_align "left"
+font_name "-*-bandal-medium-r-*-*-12-*-*-*-*-*-*-*"
+entry_height 15
+;focus_background "grey"
+;focus_foreground "yellow"
+
+MENU
+"Text Editor"
+	"Emacs", "urxvt -e emacs"
+	"Vim", "urxvt -e vim"
+"Internet"
+	"Chat"
+		"Skype", "skype"
+		"Weechat", "urxvt -e weechat-curses"
+	"Google-chrome", "google-chrome"
+"Media"
+	"Music"
+		"clementine", "clementine"
+	"Graphics"
+		"gimp", "gimp"
+"Docs"
+	"libreoffice", "libreoffice"
+	"acroread", "acroread"
+"Tools"
+	"Development"
+		"Umbrello", "umbrello"
+	"Hacking"
+		"Vidalia", "vidalia"
+		"Wireshark", "wireshark"
+		"wxHexEditor", "wxHexEditor"
+ENDMENU
