@@ -10,6 +10,26 @@
 #include "klicknmenu.h"
 #include "draw.h"
 
+int    menu_width;
+int    menu_height;
+int    menu_padding;
+int    border_width;
+char*  border_color;
+int    entry_height;
+char*  bgColor;
+char*  fgColor;
+char*  focus_bgColor;
+char*  focus_fgColor;
+char*  fontname;
+
+/* location values of mouse */
+int    pointer_x;
+int    pointer_y;
+ALIGN  align;
+ENTRY* lastentry;
+ENTRY* menu;
+ENTRY* current_entry;
+
 /* initmenu: with $HOME environment value, make the configuration file path 
    and read the file, starting to make entry nodes. */
 extern void

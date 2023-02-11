@@ -14,24 +14,24 @@
 #define ISENDMENU(v) ( strncmp(v, OPTION_ENDMENU, strlen(OPTION_ENDMENU)) == 0 )
 
 /* miscelleneous values for parsing config file  */
-int    menu_width;
-int    menu_height;
-int    menu_padding;
-int    border_width;
-char*  border_color;
-int    entry_height;
-char*  bgColor;
-char*  fgColor;
-char*  focus_bgColor;
-char*  focus_fgColor;
-char*  fontname;
+extern int    menu_width;
+extern int    menu_height;
+extern int    menu_padding;
+extern int    border_width;
+extern char*  border_color;
+extern int    entry_height;
+extern char*  bgColor;
+extern char*  fgColor;
+extern char*  focus_bgColor;
+extern char*  focus_fgColor;
+extern char*  fontname;
 
 /* location values of mouse */
-int    pointer_x;
-int    pointer_y;
-ALIGN  align;
-ENTRY* lastentry;
-ENTRY* menu;
+extern int    pointer_x;
+extern int    pointer_y;
+extern ALIGN  align;
+extern ENTRY* lastentry;
+extern ENTRY* menu;
 
 void   initmenu(void);
 void   checkValues(void);

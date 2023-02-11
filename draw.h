@@ -27,7 +27,7 @@ typedef struct {
 	int y;
 } mouse_pos;
 
-ENTRY* current_entry;
+extern ENTRY* current_entry;
 
 int           openDisplay(DpyContent* display);
 int           closeDisplay(DpyContent* display);
